@@ -26,4 +26,4 @@ projeto visa criar uma aplicação para o controle na qual se possar realizar as
  
  kayan Reis(github:kayanre)
  
- Jefferson Matheus(github:lima-12)
+ Matheus Lima(github:lima-12)
