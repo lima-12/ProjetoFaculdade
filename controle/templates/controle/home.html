@@ -6,15 +6,47 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> Controle De Estoque</title>
+    <style>
+   tr, th{
+        border: 1px solid color: #black;
+        padding: 8px;
+        color: black;
+
+
+    }
+
+    tr, td {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: #04AA6D;
+        color: white;
+
+    }
+    table{
+    font-size: 18px
+
+
+    }
+</style>
 </head>
 <body>
-        <table>
-            <tr> produtos
-                <td> not</td>
-                <td> pc</td>
-                <td> mouse</td>
-                <td> teclado</td>
-            </tr>
-        </table>
+    <table id="customers">
+        <tr>
+        <th> produto </th>
+        <th> valor </th>
+        <th> quantidade </th>
+        <th> data </th>
+</tr>
+
+         {% for item in dic %}
+        <tr>
+            <td >{{item.produto}} </td>
+            <td >{{item.valor}} </td>
+            <td >{{item.quantidade}} </td>
+            <td >{{item.data}} </td>
+        </tr>
+        {% endfor %}
+    </table>
 </body>
 </html>

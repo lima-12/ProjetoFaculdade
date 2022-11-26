@@ -1,8 +1,8 @@
 from django.shortcuts import render
-import datetime
+from .models import transacao
 
 
 def home(request):
-    now = datetime.datetime.now()
-    # html = "<html><body>It is now %s.</body></html>" % now
-    return render(request, 'controle/home.html')
+    dicionario = {}
+    dicionario['dic'] = transacao.objects.all()
+    return render(request, 'controle/home.html', dicionario)
