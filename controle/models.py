@@ -13,11 +13,13 @@ class Tabela(models.Model):
 
 
 class transacao(models.Model):
+    
+    descrição = models.TextField(max_length=100)
     data = models.DateTimeField(auto_now_add=True)
     quantidade = models.IntegerField()
     valor = models.DecimalField(max_digits=7, decimal_places=2)
     produto = models.ForeignKey(Produtos, on_delete=models.CASCADE)
-    descrição = models.CharField(max_length=100)
+   
 
     def __str__(self):
         return self.descrição
