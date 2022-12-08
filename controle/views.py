@@ -5,6 +5,11 @@ from .form import transacaoForm
 def home(request):
     dicionario = {}
     dicionario['dic'] = Estoque.objects.all()
+
+    busca = request.GET.get('search')
+    if busca:
+        dicionario['dic'] = Estoque.objects.filter(descricao__icontains = busca)
+
     return render(request, 'controle/home.html', dicionario)
 
 

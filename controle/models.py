@@ -29,7 +29,7 @@ class Estoque(models.Model):
     descricao = models.CharField(max_length=100)
     valor = models.DecimalField(max_digits=7, decimal_places=2)
     quantidade = models.IntegerField()
-    data = models.DateTimeField(auto_now_add=True)
+    data = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.descricao
