@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <title> Controle De Estoque</title>
+
     <!-- CSS only -->
     <style>
 
@@ -16,84 +17,80 @@
         font-family: 'Times New Roman', Times, serif, Helvetica, sans-serif;
         background-image: linear-gradient(to right, #14688a, #20a7d8);
         }
+
    tr, th{
-        border : 1px solid color : #black;
+        color: black;
         padding : 10px;
-    }
+        }
+
     tr, td {
         padding-top: 12px;
         padding-bottom: 12px;
         text-align: center;
-        background-color: #45123f;
-        color: white;
+        background-color: white;
+        color: black;
         width: 25%
     }
+
     table{
     font-size: 18px;
-    width: 90%;
+    width: 100%;
+    border: 1px;
     }
+
+    .form-control{
+    padding: 10px;
+    width: 25%
+    }
+
+    #adcionar{
+    background: white;
+    }
+
+    #buscar{
+    float: right;
+    border:1px solid;
+    padding: 10px 21px;
+    vertical-align: middle;
+    border-radius:6px;
+    }
+
+    #search{
+    float: right;
+    border:1px solid;
+    padding: 10px 21px;
+    vertical-align: middle;
+    border-radius:6px;
+
+    }
+
+
 </style>
 
 </head>
 <body>
 <div class="offset-1 col-10 home-div">
    
-    <h1> CONTROLE DE ESTOQUE </h1>
+        <h1 > CONTROLE DE ESTOQUE </h1>
     <div class="col-2 add-div">
-        <i class="fas fa-plus" ></i> <a  href="{% url 'add' %}"> ADICIONAR</a>
-        <style>
-            /* css do botam adicionar*/
-            .add-div{
-                background-color: rgb(34, 255, 0);
-                cursor: pointer;
-                display: inline-block;
-                padding: 8px;
-                border-radius: 5px;
-                margin-right: 45px;
-            }
-            /* css do icone +*/
-            .fas.fa-plus{
-                color: white;
-                margin-right: 10px;
-                margin-left: 5px;
-            }
-            
-        </style>
+        <button type="button" class="btn btn-outline-success" id="adcionar"> <a href="{% url 'add' %}"> ADICIONAR</a> </button>
     </div>
 
     <form method="get" id="search-form">
-    <div class = "col-9 search-div">
-            <button class=”btn btn-outline-secondary” type=”submit” id=”button-addon1">Buscar</button>
-    </div>
+        <button type=”submit” id="buscar" >Buscar</button>
+
         <input class="form-control" type="text" id="search" name="search" placeholder="digite o nome do produto" >
     </form>
-
-    <style>
-          .fas.fa-search{
-            position: absolute;
-            top: 12px; 
-            right: 20px;
-          }
-          .search-div{
-            padding: 0px;
-            margin-top: 15px;
-            margin-bottom: 15px;
-            display: inline-block;
-
-          }
-        </style>
-
-    
 
 </div>
 
     <table id="customers">
         <tr>
-        <th> descricao </th>
-        <th> valor </th>
-        <th> quantidade </th>
-        <th> data </th>
-        <th> editar </th>
+        <th> DESCRIÇÃO </th>
+        <th> VALOR </th>
+        <th> QUANTIDADE </th>
+        <th> ULTIMA ALTERAÇÃO </th>
+        <th> EDITAR </th>
 
 </tr>
 
@@ -103,7 +100,7 @@
             <td >{{item.valor}} </td>
             <td >{{item.quantidade}} </td>
             <td >{{item.data}} </td>
-            <td > <button id="bt_editar"><a href="{% url 'update' item.id%}"> editar</a></button> </td>
+            <td > <button type="button" class="btn btn-outline-primary" id="bt_editar"><a href="{% url 'update' item.id%}"> editar</a></button> </td>
 
         </tr>
         {% endfor %}
