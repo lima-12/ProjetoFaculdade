@@ -20,10 +20,11 @@
 
    tr, th{
         color: black;
-        padding : 10px;
+        padding: 10px;
+        boder: 1px solid black;
         }
 
-    tr, td {
+    tr, td{
         padding-top: 12px;
         padding-bottom: 12px;
         text-align: center;
@@ -34,9 +35,18 @@
 
     table{
     font-size: 18px;
+    padding: 8px;
     width: 100%;
-    border: 1px;
+    border: 4px solid black;
+    
     }
+
+    td,th{
+    border: 1px solid black;
+    padding: 8px;
+
+    }
+
 
     .form-control{
     padding: 10px;
@@ -45,6 +55,7 @@
 
     #adcionar{
     background: white;
+    color: black;
     }
 
     #buscar{
@@ -79,7 +90,7 @@
     <form method="get" id="search-form">
         <button type=”submit” id="buscar" >Buscar</button>
 
-        <input class="form-control" type="text" id="search" name="search" placeholder="digite o nome do produto" >
+        <input class="form-control" type="text" id="search" name="search" placeholder="Digite o Nome do Produto" >
     </form>
 
 </div>
