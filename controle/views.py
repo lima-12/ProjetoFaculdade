@@ -14,6 +14,7 @@ def home(request):
 
 
 def nova_transacao(request):
+    """"""
     dicionario = {}
     form = transacaoForm(request.POST or None)
 
