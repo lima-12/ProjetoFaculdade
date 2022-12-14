@@ -10,29 +10,37 @@
 
     <title> Controle De Estoque</title>
 
-    <!-- CSS only -->
     <style>
     h1{
     text-align: center;
+    margin-top: 10px
     }
+
+    a {
+        text-decoration: none;
+        color: black;
+     }
+     a:hover {
+        background-color:
+     }
 
     body{
         font-family: 'Times New Roman', Times, serif, Helvetica, sans-serif;
+        /*font-family: Arial, Helvetica, sans-serif;*/
+
+
         background-image: linear-gradient(to right, #14688a, #20a7d8);
         }
 
    tr, th{
-<<<<<<< HEAD
         color: white;
         padding : 10px;
-=======
-        color: black;
         padding: 10px;
         boder: 1px solid black;
         }
 
     tr, td{
-        padding-top: 12px;
+        padding-top: 20;
         padding-bottom: 12px;
         text-align: center;
         background-color: white;
@@ -41,26 +49,18 @@
     }
 
     tr:hover {
-    background-color: #7FFFD4;
+    background-color: #B0E0E6;
     }
 
     table{
     font-size: 18px;
-<<<<<<< HEAD
-    padding: 15px;
-
-=======
-    padding: 8px;
     width: 100%;
     border: 4px solid black;
-
->>>>>>> b3a80c3e253f2a386878868b2f4073a06ffc4bd1
     }
 
     td,th{
     border: 1px solid black;
     padding: 8px;
-
     }
 
 
@@ -69,24 +69,19 @@
     width: 25%
     }
 
-    #adcionar{
-<<<<<<< HEAD
-    border-radius: 6px;
-    border: none;
-    background-color: white;
-=======
-    background: white;
-    color: black;
->>>>>>> b3a80c3e253f2a386878868b2f4073a06ffc4bd1
-    }
-
     #bt_editar{
     border-radius: 6px;
     border: none;
     color: black;
     }
 
-
+    #adcionar{
+    float: left;
+    border:1px solid;
+    padding: 10px 21px;
+    vertical-align: middle;
+    border-radius:6px;
+    }
 
     #buscar{
     float: right;
@@ -113,6 +108,7 @@
 
 </head>
 <body>
+
 <div class="offset-1 col-10 home-div">
    
         <h1 > CONTROLE DE ESTOQUE </h1>
@@ -131,16 +127,18 @@
 <div class="container">
     <table id="customers" class="table">
         <tr class="table-dark">
+
             <th> DESCRIÇÃO </th>
             <th> VALOR </th>
             <th> QUANTIDADE </th>
             <th> ULTIMA ALTERAÇÃO </th>
             <th> EDITAR </th>
 
-</tr>
+        </tr>
 
-         {% for item in dic %}
+        {% for item in dic %}
         <tr >
+
             <td >{{item.descricao}} </td>
             <td >{{item.valor}} </td>
             <td >{{item.quantidade}} </td>

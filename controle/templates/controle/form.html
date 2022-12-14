@@ -20,7 +20,7 @@
 
         <button class="btn btn-outline-primary" id="bt_editar" type="submit">Salvar</button>
         {% if obj %}
-            <button  type="button" class="btn btn-outline-danger" id="remover"> <a href="{% url 'delete' obj.id%}"> Remover </a></button>
+        <button  type="button" class="btn btn-outline-danger" id="remover"> <a href="{% url 'delete' obj.id%}"> Remover </a></button>
         {% endif %}
     </form>
 </body>
