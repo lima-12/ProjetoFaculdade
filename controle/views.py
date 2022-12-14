@@ -3,6 +3,18 @@ from .models import Estoque
 from .form import transacaoForm
 
 def home(request):
+    """
+    exibe a tabela com informações do banco de dados
+
+    argumentos:
+        descrição: string
+        valor: inteiro
+        quantidade: inteiro
+
+    retorno:
+        tabela com informações do banco
+    """
+
     dicionario = {}
     dicionario['dic'] = Estoque.objects.all()
 
@@ -14,7 +26,6 @@ def home(request):
 
 
 def nova_transacao(request):
-    """"""
     dicionario = {}
     form = transacaoForm(request.POST or None)
 

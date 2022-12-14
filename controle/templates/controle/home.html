@@ -13,7 +13,8 @@
     <style>
     h1{
     text-align: center;
-    margin-top: 10px
+    margin-top: 10px;
+    color: white;
     }
 
     a {
@@ -26,9 +27,6 @@
 
     body{
         font-family: 'Times New Roman', Times, serif, Helvetica, sans-serif;
-        /*font-family: Arial, Helvetica, sans-serif;*/
-
-
         background-image: linear-gradient(to right, #14688a, #20a7d8);
         }
 
@@ -69,19 +67,13 @@
     width: 25%
     }
 
-    #bt_editar{
-    border-radius: 6px;
-    border: none;
-    color: black;
+    #adicionar{
+    padding: 10px 21px;
+    font-family: arial;
     }
 
-    #adcionar{
-    float: left;
-    border:1px solid;
-    padding: 10px 21px;
-    vertical-align: middle;
-    border-radius:6px;
-    }
+
+
 
     #buscar{
     float: right;
@@ -113,7 +105,10 @@
    
         <h1 > CONTROLE DE ESTOQUE </h1>
     <div class="col-2 add-div">
-        <button type="button" id="adcionar"> <a href="{% url 'add' %}"> ADICIONAR</a> </button>
+        <button type="button" id="adicionar" class="btn btn-light"> <a href="{% url 'add' %}"> <b>Adicionar <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+</svg></b> </a> </button>
     </div>
 
     <form method="get" id="search-form">
@@ -143,7 +138,9 @@
             <td >{{item.valor}} </td>
             <td >{{item.quantidade}} </td>
             <td >{{item.data}} </td>
-            <td > <button type="button" id="bt_editar"><a href="{% url 'update' item.id%}"> editar</a></button> </td>
+            <td > <button type="button" class="btn btn-outline-primary" id="bt_editar"><a href="{% url 'update' item.id%}"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
+  <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z"/>
+</svg> </a></button> </td>
 
         </tr>
         {% endfor %}
