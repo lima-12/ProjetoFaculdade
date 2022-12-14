@@ -20,7 +20,7 @@ from controle.views import home, nova_transacao, update, delete
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', home, name='home'),
+    path('', home, name='home'),
     path('novo/', nova_transacao, name='add'),
     path('update/<int:pk>/', update, name='update'),
     path('delete/<int:pk>/', delete, name='delete'),
