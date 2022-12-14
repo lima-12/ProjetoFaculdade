@@ -12,6 +12,10 @@
 
     <!-- CSS only -->
     <style>
+    h1{
+    text-align: center;
+
+    }
 
     body{
         font-family: 'Times New Roman', Times, serif, Helvetica, sans-serif;
@@ -19,7 +23,7 @@
         }
 
    tr, th{
-        color: black;
+        color: white;
         padding : 10px;
         }
 
@@ -29,13 +33,17 @@
         text-align: center;
         background-color: white;
         color: black;
-        width: 25%
+        width: 20%
+    }
+
+    tr:hover {
+    background-color: #7FFFD4;
     }
 
     table{
     font-size: 18px;
-    width: 100%;
-    border: 1px;
+    padding: 15px;
+
     }
 
     .form-control{
@@ -44,8 +52,18 @@
     }
 
     #adcionar{
-    background: white;
+    border-radius: 6px;
+    border: none;
+    background-color: white;
     }
+
+    #bt_editar{
+    border-radius: 6px;
+    border: none;
+    color: black;
+    }
+
+
 
     #buscar{
     float: right;
@@ -61,9 +79,12 @@
     padding: 10px 21px;
     vertical-align: middle;
     border-radius:6px;
-
     }
 
+    .container {
+    height: 500px;
+    overflow-y: scroll;
+    }
 
 </style>
 
@@ -73,7 +94,7 @@
    
         <h1 > CONTROLE DE ESTOQUE </h1>
     <div class="col-2 add-div">
-        <button type="button" class="btn btn-outline-success" id="adcionar"> <a href="{% url 'add' %}"> ADICIONAR</a> </button>
+        <button type="button" id="adcionar"> <a href="{% url 'add' %}"> ADICIONAR</a> </button>
     </div>
 
     <form method="get" id="search-form">
@@ -84,27 +105,29 @@
 
 </div>
 
-    <table id="customers">
-        <tr>
-        <th> DESCRIÇÃO </th>
-        <th> VALOR </th>
-        <th> QUANTIDADE </th>
-        <th> ULTIMA ALTERAÇÃO </th>
-        <th> EDITAR </th>
+<div class="container">
+    <table id="customers" class="table">
+        <tr class="table-dark">
+            <th> DESCRIÇÃO </th>
+            <th> VALOR </th>
+            <th> QUANTIDADE </th>
+            <th> ULTIMA ALTERAÇÃO </th>
+            <th> EDITAR </th>
 
 </tr>
 
          {% for item in dic %}
-        <tr>
+        <tr >
             <td >{{item.descricao}} </td>
             <td >{{item.valor}} </td>
             <td >{{item.quantidade}} </td>
             <td >{{item.data}} </td>
-            <td > <button type="button" class="btn btn-outline-primary" id="bt_editar"><a href="{% url 'update' item.id%}"> editar</a></button> </td>
+            <td > <button type="button" id="bt_editar"><a href="{% url 'update' item.id%}"> editar</a></button> </td>
 
         </tr>
         {% endfor %}
 
     </table>
+    </div>
 </body>
 </html>
